@@ -1,0 +1,197 @@
+#+AUTHOR:Oscar_Jordon
+#+TITLE:C++_Notes
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* C++ NOTES
+
+** Table Of Contents                                                   :toc:
+- [[#c-notes][C++ NOTES]]
+  - [[#syntax][Syntax]]
+  - [[#nameing-conventions][nameing conventions]]
+  - [[#mathematical-expressions][mathematical expressions]]
+  - [[#order-of-operations][Order of Operations]]
+  - [[#data-types][data types]]
+  - [[#working-withe-number][Working withe Number]]
+  - [[#random-number-generating][Random Number Generating]]
+  - [[#escape-seqences][Escape seqences]]
+  - [[#bad-caulculator][Bad Caulculator]]
+  - [[#good-caulculator][Good Caulculator:]]
+  - [[#beter-caulculator][Beter Caulculator:]]
+
+** Syntax
+#
+1. int      
+2. double    
+3. cout      #output
+4. cin
+5. //  comment
+6. using namespace std;
+
+
+** nameing conventions
+# diffrent ways of nameing variables
+6. snake_case
+7. PascalCase
+8. camelcase
+9. iHungaruanNotation
+EX:
+#+begin_src C++
+int file_size; // snake_case
+#+end_src
+
+
+** mathematical expressions
+the increment or decrement operations can be use as a postfix or prefix
+#x++ adds 1 to x
+#+begin_src C++
+int main() {
+   int x = 10;
+    int y = x++; // x = 11, y = 10
+   int z = ++x; // x = 11, z = 11
+   return 0;
+}
+#+end_src
+
+** Order of Operations
+#+begin_src C++
+#include <iostream>
+
+int main() {
+  double x = 10;
+  double y = 5;   
+  double z = (x + 10) / (3 * y)) ;   
+  std::cout << z;
+  return 0;
+
+#+end_src
+
+** data types
+1. int      #4 bytes
+3. short    #2
+4. long     #4
+5. long long #8
+# FLOATING POINT NUMBERS (with decimals)
+1. float    #4
+2. double   #8
+3. long double #8
+#
+1. bool (ture or flase) 
+2. char (single character)
+EX:
+#+begin_src C++
+int main() {
+  double price = 99.99;
+  float interesrRate = 3.67f;
+  long filesize = 90000L;
+  char letter = 'a';
+  bool isValid = false;
+  return 0;
+#+end_src
+
+** Working withe Number
+
+*** operations
+#+begin_src C++
+void()
+if (x != 0)// not equal
+  x = 0
+#+end_src
+
+*** decimal
+#0b11111111 =255
+
+*** hex
+#0xff = 255
+
+** Random Number Generating
+#
+#+begin_src C++
+#include <iostream>
+#include <cmath>
+#include <ctime>
+using namespace std;
+
+int main() {
+  srand(time(0));
+  int number = rand() % 10;
+  cout << number;
+  return 0;
+}
+#+end_src
+
+** Escape seqences 
+Escape Sequence 	Description 	
+\t 	Creates a horizontal tab 	
+\\ 	Inserts a backslash character (\) 	
+\" 	Inserts a double quote character 	
+\n  Creates a New line
+\n\n Creates a Blank line
+
+** Bad Caulculator  
+- 26 lines of code, unnecessary curly braces around the variable declarations. They don't serve any purpose in this context.
+#+begin_src C++
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+  int x;{
+    string sx;{
+      cout << "put a x vaule: \n";
+    }
+  cin >> x;
+  }
+  int y;{
+     string sy;{
+      cout << "put a y vaule: \n";
+     }    
+    cin >> y;
+  }
+  string ans;{
+    cout << "\nthe sum is: \n"; 
+    cout << x + y;
+    cout << "\n";
+}
+return 0;
+}
+#+end_src
+
+** Good Caulculator:
+- 16 lines of code
+#+begin_src C++
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int x;
+  cout << "Enter a x vaule: \n";
+  cin >> x;
+  
+  int y;
+  cout << "Enter a y vaule: \n";
+  cin >> y;
+  
+  cout << "\nThe sum is: \n" << x + y << "\n";
+return 0;
+}
+#+end_src
+
+** Beter Caulculator:
+-11 lines 
+#+begin_src C++
+#include <iostream>
+
+using namespace std;
+int main(){
+int x ,y;
+cout << "Enter a x vaule: \n";
+cin >> x;  
+cout << "Enter a y vaule: \n";
+cin >> y;
+cout << "\nThe sum is: \n" << x + y << "\n";
+return 0;}
+#+end_src
